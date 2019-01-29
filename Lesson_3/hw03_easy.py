@@ -4,12 +4,40 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
+def my_okrug_number(numb, znak):
+    if float(numb) - int(numb) > 0.5:
+    my_okrug_number = (int(numb) + 1
+    else:
+    my_okrug_number = (int(numb))
+    return numb
+my_okrug_number = (1234567, 5)
+print(my_okrug_number)
+
+
+
+
 
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
 # Решение реализовать в виде функции.
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
+
+
+import math
+win = str('jackpot')
+loss = str('loss')
+my_list = [3, 5, 5, 5, 4, 5]
+def priz(x, y):
+    x = sum(my_list[0:3])
+    y = sum(my_list[3:])
+    if x == y:
+        print(win)
+    else:
+        print(loss)
+        return priz
+priz(13, 14)
+
 
 
 
