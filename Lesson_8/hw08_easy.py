@@ -5,6 +5,15 @@
 элемента словаря, как к атрибуту класса.
 '''
 
+class DeatilBuilder:
+     def __init__(self, elem):
+        for a, b in elem.items():
+            setattr(self, a, b)
+
+detail = DeatilBuilder({'name' : 'sensor', 'purpose' : 'cooling system'})
+print(detail.name)
+print(detail.purpose)
+
 
 
 
@@ -16,5 +25,16 @@
 Внутри класса должно быть предусмотрено делегирование этой функции методу (clear)
 списка.
 '''
+class MyClass:
+    def __init__(self, lst):
+        self.obj = lst
+
+    def __getattr__(self, attr):
+        return getattr(self.obj, attr)
+
+
+new_lst = MyClass([1, 2, 3, 4, 5, 6, 7, 8, 9])
+new_lst.clear()
+print(new_lst.obj)
 
 
